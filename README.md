@@ -41,7 +41,8 @@ Spring Data JPA
 H2 Database
 MySQL
 
-
+Opsætning af projektet
+-----------------------
 1. Opret en Region klasse i model package.
 Denne klasse repræsenterer en region med følgende properties:
 kode
