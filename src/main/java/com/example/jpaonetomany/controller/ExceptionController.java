@@ -37,11 +37,19 @@ public class ExceptionController {
 
 
     @GetMapping("loop/{loopnum}")
-    public int loop(@PathVariable int loopnum) {
+    public String loop(@PathVariable String loopnum) {
         int x = 0;
-        for (int i = 0; i < loopnum; i++) {
-            x++;
+        // vi har tilføjet y så x ikke bliver størrer;
+        int y = 0;
+        try {
+            x = Integer.parseInt(loopnum);
+            for (int i = 0; i < x; i++) {
+                y++;
+            }
+        }catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+            return e.getClass().getName() + " : " + e.getMessage();
         }
-        return x;
+        return "" + x;
     }
 }
